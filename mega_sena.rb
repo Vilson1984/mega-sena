@@ -1,28 +1,33 @@
-puts "Afinal a vida é regida por sorte ou destino?"
-puts "Se for regida por sorte, quanto mais apostas vc fizer, mais chances terá de ganhar."
-puts "Se for regida por destino, um jogo será o suficiente para acontecer o que já está escrito para aconter"
-puts "Vamos testar? ..."
+p "Escolha os números de sua aposta"
 
-puts "escolha um número"
+class Jogo
+   
+      
+   
+   aposta = Array.new
+   bilhete_premiado = Array.new
 
-aposta = Array.new
+   2.times do num = gets.to_i
+      aposta << num 
+   end
 
-6.times do numero_aposta = gets.chomp
-aposta << numero_aposta
+
+   def sorteio
+
+   2.times do numero_sorteado = rand 1..2.to_i
+   bilhete_premiado << numero_sorteado
+   end
+   #contador = 1
+
+   #until aposta == sorteio
+    #  sorteio
+    #  contador =+ 1
+   #end
+
+   p "numeros da aposta: #{bilhete_premiado}}"
+   p "numeros do sorteio:#{bilhete_premiado}"
+   #p contador
+
+   end
+
 end
-
-
-
-aux = [0]
-
-premiado = Array.new
-
-6.times do |sorteio| 
- premiado << (1..10).to_a.sample
-end
- p premiado
-
- if premiado[aux] == premiado[aux]
-    p "numero repetido"
- end
-#fim = false
