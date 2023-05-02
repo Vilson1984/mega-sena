@@ -1,42 +1,50 @@
-=begin
-   
-rescue => exception
-   
-end
-   aposta = gets.to_i
+class MegaTeimosinha
+   def f_aposta   
+     @aposta = []
+ 
+     p "Faça seu jogo"
+     3.times do 
+       num = gets.to_i
+       @aposta << num
+     end
+     
+     return @aposta.sort
+   end   
 
-   def encontrar_letra
-      p "Encontrar letra!!!!!"
-   end
-   
+    def f_sorteio
+      @bilhete_premiado = []
 
-   def sorteio
-      
-      bilhete_premiado = Array.new
-      
-      2.times do numero_sorteado = rand 1..5.to_i
-         
-      bilhete_premiado << numero_sorteado
+      3.times do
+        num_disponiveis = (1..6).to_a
+        @bilhete_premiado << num_disponiveis.sample
       end
 
-   end
+      return @bilhete_premiado.sort
+    
+    
+    end
+    
+    def compara_jogos
+      loop do
+        until @aposta == @bilhete_premiado
+          f_sorteio
+        end        
 
-   p sorteio
-   
-p "os números sorteados foram: "
-=end
-class JOGO
-
-def bilhete_aposta
-   @aposta = gets.chomp
-end
-
-   bilhete_aposta
-
-   puts "Sua aposta é: #{bilhete_aposta}"
-
+        if @aposta == @bilhete_premiado
+          p "Parabéns o seu bilhete #{@bilhete_premiado} foi sorteado"
+          break
+        else
+          
+        end
+      end
       
+    end
+  end
 
-
-
-end
+    
+jogo = MegaTeimosinha.new
+#aposta = jogo.f_aposta
+#p "Sua aposta foi #{aposta.sort}"
+#bilhete_premiado = jogo.f_sorteio
+#p "Os números premiados foram #{bilhete_premiado}"
+compara = jogo.compara_jogos
