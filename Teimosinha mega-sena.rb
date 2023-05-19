@@ -1,14 +1,17 @@
 class MegaTeimosinha
+  # TEXTO EXPLICATIVO DO JOGO
   puts "Olá jogador!"
 
   puts "Considere a sua APOSTA 3 números distintos entre si, dentre 1 a 10."
   puts "O SORTEIO também será de 3 números distintos entre si, dentre 1 a 10."
   puts "Por favor, faça a sua APOSTA!"
 
+  # FUNÇÃO CONTADORA DA QUANTIDADE DE JOGADAS
   def initialize
     @contador = 0
   end
 
+  # FUNÇÃO APOSTA DOS NÚMEROS DO JOGADOR
   def f_aposta   
     @aposta = []
 
@@ -20,6 +23,7 @@ class MegaTeimosinha
     p "Sua aposta é #{@aposta.sort}"
   end
 
+  # FUNÇÃO SORTEIO DOS NÚMEROS PREMIADOS
   def f_sorteio 
     
     @bilhete_premiado = []
@@ -32,6 +36,7 @@ class MegaTeimosinha
 
   end
 
+  #FUNÇÃO COMPARA BILHETE PREMIADO ATÉ QUE SEJA IGUAL A APOSTA DO JOGADOR
   def f_compara_jogo
     
     if @aposta != @bilhete_premiado
@@ -56,3 +61,6 @@ end
 jogo = MegaTeimosinha.new
 aposta = jogo.f_aposta
 compara_jogo = jogo.f_compara_jogo
+
+#MÉTODO AGUARDA AÇÃO DO USUÁRIO PARA QUE SEJA FECHADO O PROGRAMA
+gets 
