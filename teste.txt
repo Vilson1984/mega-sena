@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-TESTANDO....
-=======
-OOOOOOOOOO
->>>>>>> 1003390bbd14ac7a16f452671a6e646493a34a60
